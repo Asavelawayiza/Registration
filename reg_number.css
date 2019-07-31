@@ -1,0 +1,41 @@
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+  
+h1{
+    justify-content: center;
+    display: flex;
+     font-size: 40px; 
+    text-align: center;
+    border: 5px solid black;
+    width: 500px;
+    margin: 30px auto;
+  }
+
+  .Reg-number{
+    justify-content: center;
+    display: flex;
+
+  }
+
+  .form{
+      font: 20px arial, sans-serif;
+      font-weight: bold;
+      margin-right: 1em;
+  }
+  .col-12{
+    justify-content: center;
+    display: flex;
+  }
+
+  .Btns{
+    display: block;
+    margin: auto;
+    font-size: 5em;
+  }
+
+  .cities{
+    justify-content: center;
+    display: flex;  
+  }
