@@ -2,11 +2,25 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.registrations {
+  justify-content: center;
+  display: inline-block;
+  /* display: flex; */
+  background-color: yellow;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding : 1em;
+  text-align: center;
+  font-weight: bold;
+  border : 0.25em solid;
+  border-radius: 1em;
+}
   
 h1{
     justify-content: center;
     display: flex;
-     font-size: 40px; 
+     font-size: 50px; 
     text-align: center;
     border: 5px solid black;
     width: 500px;
@@ -14,28 +28,34 @@ h1{
   }
 
   .Reg-number{
-    justify-content: center;
-    display: flex;
-
-  }
-
-  .form{
-      font: 20px arial, sans-serif;
+      justify-content: center;
+      display: flex;
+      font: 30px arial, sans-serif;
       font-weight: bold;
       margin-right: 1em;
   }
+  
   .col-12{
     justify-content: center;
     display: flex;
+    
   }
 
   .Btns{
     display: block;
     margin: auto;
-    font-size: 5em;
+    /* font-size: 20px; */
+     font: 50px arial, sans-serif; 
+    font-weight: bold;
   }
 
   .cities{
     justify-content: center;
-    display: flex;  
+    display: flex;
+    font: 20px arial, sans-serif;
+      font-weight: bold;  
+  }
+
+  .hidden{
+    display: none;
   }

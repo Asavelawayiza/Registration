@@ -1,29 +1,25 @@
-function regNumber(regList) {
-    var enteredReg = {};
-    //var registration =[]
+function regNumber() {
+    var enteredReg = [];
+    var regi;
+
 
     function registrationList(regNumber) {
-        var regi = regNumber
-        console.log(regi)
-        for (var i = 0; i < regi.length; i++) {
-            var n = regi[i]
-            if (enteredReg[n] === undefined)
-                enteredReg[n] = 0;
+        regi = regNumber
+        if (!enteredReg.includes(regNumber)) {
+            enteredReg.push(regNumber)
         }
+
     }
 
-    function regCheck(reg) {
-        var registration = [];
+    function regCheck(loc) {
 
-        if (reg.startsWith('CJ')) {
-            registration.push(reg);
+        var registration = [];
+        for (var i = 0; i < enteredReg.length; i++) {
+            if (enteredReg[i].startsWith(loc)) {
+                registration.push(loc);
+            }
         }
-        else if (reg.startsWith('CA')) {
-            registration.push(reg);
-        }
-        else if (reg.startsWith('CK')) {
-            registration.push(reg);
-        }
+
         return registration;
     }
 
@@ -31,11 +27,16 @@ function regNumber(regList) {
         return enteredReg;
     }
 
-    console.log(enteredReg)
+    function getRegi() {
+        return regi
+    }
+
     return {
         regCheck,
         registrationList,
-        getReg
+        getReg,
+        getRegi
+
 
     }
 }

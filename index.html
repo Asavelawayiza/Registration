@@ -6,67 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="reg_number.css">
-    <script src="reg_number.js" charset="utf-8"></script>
+    <script src="tests/reg_number.js" charset="utf-8"></script>
     <title>Registration number</title>
 </head>
-<h1>Registration Number</h1>
 
-<body background="silver-grey.jpg">
-    <div class="row">
-        <div class="col-12">
-                        <div class="Reg-number">
-                            <form>
-                                Registration-Number:
-                                <input type="text" class="inputReg" name="Reg-num" value="">
-                            </form>
-                        </div>
+<body background="reg.jpg">
+    <div class="container">
+        <h1>Registration Number</h1>
+        <div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="Reg-number">
+                        Registration Number:
+                        <input type="text" class="inputReg" name="Reg-num" placeholder="enter registration" value="">
                     </div>
                 </div>
+            </div>
 
-                <div class="row">
-                    <div class="col-12">
-                        <div class="Btns">
-                            <button type=button class="addButton" value="Add">Add</button>
-                        </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="Btns">
+                        <button type=button class="addButton" value="Add">Add</button>
                     </div>
                 </div>
+            </div>
 
-                <div class="row">
-                    <div class="col-12">
-                        <div class="cities">
-                                <label>
-             
-                                        <span>
-                                            <input type="radio" class="radio-inline" name="myCity" value="Cape Town"> Cape Town
-                                        </span>
-                            
-                                    
-                                        <span>
-                                            <input type="radio" class="radio-inline" name="myCity" value="Bellvile"> Bellvile
-                                        </span>
+            <div class="row">
+                <div class="col-12">
+                    <div class="cities">
+                        <label>
 
-                                        <span>
-                                                <input type="radio" class="radio-inline" name="myCity" value="Malmesbury"> Malmesbury
-                                        </span>
-                            
-                                </label>
-                        </div>
+                            <span>
+                                <input type="radio" class="radio-inline" name="myCity" value="Cape Town"> Cape Town
+                            </span>
+
+
+                            <span>
+                                <input type="radio" class="radio-inline" name="myCity" value="Bellvile"> Bellvile
+                            </span>
+
+                            <span>
+                                <input type="radio" class="radio-inline" name="myCity" value="Malmesbury"> Malmesbury
+                            </span>
+
+                        </label>
                     </div>
                 </div>
+            </div>
 
 
 
-                <div class="row">
-                        <div class="col-12">
-                            <div class="Btns">
-                                <button type=button class="showButton" value="Show">Show</button>
-                            </div>
-                        </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="Btns">
+                        <button type=button class="showButton" value="Show">Show</button>
                     </div>
-    
+                </div>
+            </div>
 
+            <div class="registrations">
 
+                </div>
 
+                <script src="tests/reg_number.js"></script>
+                <script src="tests/reg-number.DOM.js"></script>
 </body>
 
 </html>
