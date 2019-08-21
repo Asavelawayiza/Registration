@@ -18,7 +18,7 @@
                 <div class="col-12">
                     <div class="Reg-number">
                         Registration Number:
-                        <input type="text" class="inputReg" name="Reg-num" placeholder="enter registration" value="">
+                        <input type="text" class="inputReg" name="Reg-num" placeholder="enter registration" value="" maxlength="9">
                     </div>
                 </div>
             </div>
@@ -36,18 +36,21 @@
                     <div class="cities">
                         <label>
 
+                           
                             <span>
-                                <input type="radio" class="radio-inline" name="myCity" value="Cape Town"> Cape Town
+                                <input type="radio" class="radio-inline" name="myCity" value="CA"> Cape Town
                             </span>
 
 
                             <span>
-                                <input type="radio" class="radio-inline" name="myCity" value="Bellvile"> Bellvile
+                                <input type="radio" class="radio-inline" name="myCity" value="CY"> Bellvile
                             </span>
 
                             <span>
-                                <input type="radio" class="radio-inline" name="myCity" value="Malmesbury"> Malmesbury
+                                <input type="radio" class="radio-inline" name="myCity" value="CK"> Malmesbury
                             </span>
+                            <input type="radio" class="radio-inline" name="myCity" value=""> show all
+                        </span>
 
                         </label>
                     </div>
@@ -64,9 +67,16 @@
                 </div>
             </div>
 
-            <div class="registrations">
+            <div class="error">
+			
+			</div>
 
+            <div class="registrations">
+                  
                 </div>
+            <div class="fromSelectedTown">
+
+             </div>
 
                 <script src="tests/reg_number.js"></script>
                 <script src="tests/reg-number.DOM.js"></script>

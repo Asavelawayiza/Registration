@@ -1,27 +1,34 @@
-describe('reg-number test' , function(){
-    it('if location starts with CA should return Cape Town registration' , function(){
+describe('reg-number test', function () {
+    it('Should return CA Registrations if a Cape Town Radio Button is Clicked', function () {
         var instances = regNumber();
-        assert.deepEqual(instances.regCheck(enteredReg), 'CA 123' );
-       })
-    
-    it('if reg Number starts with CK should return Malmesbury registration' , function(){
+        assert.equal(instances.registrationList('CA 123 21'), 'CA 789 62');
+    })
+
+    it('Should return CK Registrations if a Malmasbury Radio Button is Clicked', function () {
         var instances = regNumber();
-        assert.deepEqual(instances.regCheck("CK 246", "CK"), ['CK 246'] );
-       })
+        assert.equal(instances.regCheck('CK 789 62'), 'CK 789 62');
+    })
 
-     
-    it('if reg Number starts with CJ should return Bellvile registration' , function(){
+    it('Should return CY Registrations if a Bellville Radio Button is Clicked', function () {
         var instances = regNumber();
-        assert.deepEqual(instances.regCheck("CJ 369", "CJ"), ['CJ 369'] );
-        })
+        assert.equal(instances.regCheck('CY 223 54'), 'CY 223 54');
+    })
 
-        it('should return', function(){
-            var instances = regNumber();
-            instances.registrationList(["CK 123"])
-            instances.registrationList(["CA 123"])
-            instances.registrationList(["CJ 123"])
-            assert.deepEqual(instances.getReg(),['CK 123', 'CJ 123', 'CA 123']);
-        })
-    });
+    it('Should return All Registrations if a ShowAll Radio Button is Clicked', function () {
+        var instances = regNumber();
+        assert.equal(instances.regCheck('CA 123 21 , CK 789 62 , CY 223 54'), "CA 123 21 , CK 789 62 , CY 223 54");
+    })
 
-    
+    it('Return true if the text box has 2 letters and 6 numbers', function () {
+        var instances = regNumber();
+        assert.equal(instances.regCheck('CA 123465'), true);
+    })
+
+    it('Return Error Message if no Registration is entered', function () {
+        var instances = regNumber();
+        assert.equal(instances.regCheck(""), 'Please enter a Registration');
+    })
+
+
+});
+
