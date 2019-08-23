@@ -6,15 +6,13 @@ var displayFiltered  = document.querySelector(".fromSelectedTown")
 var showBtnElem = document.querySelector(".showButton")
 var errorMessage = document.querySelector(".error");
 
-if (localStorage['name']) {
-    var nameStore = JSON.parse(localStorage['name'])
+if (localStorage['reg']) {
+    var regStore = JSON.parse(localStorage['reg'])
 }
 else {
-    nameStore = {}
+    regStore = []
 }
-
-
-var instances = regNumber(nameStore);
+var instances = regNumber(regStore);
 
 
 function clearError() {
@@ -25,39 +23,44 @@ function clearError() {
 }
 
 addBtnElem.addEventListener("click", function () {
-
-
-    instances.registrationList(inputReg.value);
-    var regElem = instances.getRegi();
-      instances.regCheck(regElem);
-
-    if (regElem === "" ) {
+    if (regNumbers === "" ) {
 		errorMessage.innerHTML = "Please write your registration Number"
 		clearError();
 		return;
-	}
+    }
+    
+    var result = instances.registrationList(inputReg.value);
+    var regNumbers = instances.getReg();
+    //   instances.regCheck(regNumbers);
 
- 
+   if(result) {
+       for (var i=0; i<regNumbers.length; i++){
+           var selectedReg = regNumbers[i];
+       }
     var newReg = document.createElement("li");
-    newReg.textContent = regElem;
+    newReg.textContent = selectedReg;
     // newReg.classList.add("registrations");
     registrations.appendChild(newReg);
 
-
-   
-
+     localStorage['reg'] = JSON.stringify(instances.getReg())
+       
+} else {
+       errorMessage.innerHTML ="The registration is already added"
+		clearError();
+		return;
+	
+   }
 });
 
 
 showBtnElem.addEventListener("click", function () {
 
-    var showBtnElem = document.querySelector("input[name='myCity']:checked")
+    var showBtnElem = document.querySelector(".radio-inline:checked")
     registrations.innerHTML = "";
     if (showBtnElem) {
-   
     }
 
-    var currentReg =  instances.regCheck(showBtnElem.value);
+     var currentReg =  instances.regCheck(showBtnElem.value);
    
 
     for (var i = 0; i < currentReg.length; i++) {
@@ -67,8 +70,8 @@ showBtnElem.addEventListener("click", function () {
         city.textContent = selectedCity;
         registrations.appendChild(city)
 
-    }
-  
+    
+}
 
 });
 
