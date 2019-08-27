@@ -1,4 +1,5 @@
 body{
+  background-color: ghostwhite;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -62,10 +63,21 @@ h1{
   }
 
   .error {
-    color: blue;
-    font-weight: bold;
     justify-content: center;
     display: flex;
     font-size: 25px;
   }
   
+
+.green {
+  color: green;
+
+}
+
+.red {
+  color: red;
+
+}
+.black{
+  color: black;
+}

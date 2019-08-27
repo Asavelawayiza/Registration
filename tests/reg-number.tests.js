@@ -47,6 +47,40 @@ describe('reg-number test', function () {
         assert.deepEqual(instances.regCheck(""), ["CA 123 21","CK 789 62","CY 223 54"]);
     })
 
+    describe('should store valid reg', () => {
+
+        /**
+         * get regNumber
+         * validate
+         * display
+         */
+
+         var factoryFunction = regNumber();
+
+         it('should return true for validate ', () => {
+             assert.equal(true, factoryFunction.regexValidator('CA 123 333'))
+         })
+
+         it('should return false for validate ', () => {
+            assert.equal(false, factoryFunction.regexValidator('CA333'))
+        })
+
+        it('should return true for validate town', () => {
+            assert.equal(true, factoryFunction.townValidator('CA 123 333'))
+        })
+
+        it('should return true for validate town', () => {
+            assert.equal(true, factoryFunction.townValidator('cy 123 333'))
+        })
+
+        it('should return false for validate town', () => {
+           assert.equal(false, factoryFunction.townValidator('CM 333 333'))
+       })
+
+
+
+    })
+
     
 });
 
