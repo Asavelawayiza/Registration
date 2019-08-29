@@ -1,3 +1,4 @@
+
 var inputReg = document.querySelector(".inputReg")
 var addBtnElem = document.querySelector(".addButton")
 var citiesElem = document.querySelector(".cities")
@@ -7,14 +8,24 @@ var showBtnElem = document.querySelector(".showButton")
 var errorMessage = document.querySelector(".error");
 var clearBtn = document.querySelector(".clearButton")
 
+var regStore = [];
 if (localStorage['reg']) {
-    var regStore = JSON.parse(localStorage['reg'])
+    regStore = JSON.parse(localStorage['reg'])
 }
-else {
-    regStore = []
-}
+
 var instances = regNumber(regStore);
 
+var currentReg = instances.getReg()
+
+for (var i = 0; i < currentReg.length; i++) {
+    var selectedCity = currentReg[i];
+
+    var city = document.createElement("li");
+    city.textContent = selectedCity;
+    registrations.appendChild(city)
+
+
+}
 
 function clearError() {
     setTimeout(function () {
@@ -29,7 +40,7 @@ addBtnElem.addEventListener("click", function () {
         clearError();
         errorMessage.innerHTML = "Please write your registration Number"
         errorMessage.classList.remove("green")
-        errorMessage.classList.add("red")
+         errorMessage.classList.add("red")
 
     }
 
@@ -58,7 +69,8 @@ addBtnElem.addEventListener("click", function () {
     errorMessage.innerHTML = "";
 
     
-    var result = instances.registrationList(inputReg.value);
+   var result = instances.getReg(inputReg.value);
+    
     var regNumbers = instances.getReg();
 
     var newReg = document.createElement("li");
@@ -96,10 +108,14 @@ showBtnElem.addEventListener("click", function () {
 clearBtn.addEventListener("click", function () {
     instances.clear();
     localStorage.clear();
-    registrations.innerHTML = ""
-   
+    registrations.innerHTML = "";
+
 
 })
+
+
+
+
 
 
 

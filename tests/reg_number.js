@@ -1,5 +1,5 @@
-function regNumber() {
-    var enteredReg = [];
+function regNumber(storedRegNrs) {
+    var enteredReg = storedRegNrs || [];
 
     function clear() {
         enteredReg = [];
@@ -7,12 +7,17 @@ function regNumber() {
 
 
     function registrationList(reg) {
+        
+
+        // do validation here
+        
+
         if (!enteredReg.includes(reg)) {
             enteredReg.push(reg);
-            return true;
+             return true;
         }
 
-        return false;
+         return false;
 
     }
 
@@ -35,7 +40,7 @@ function regNumber() {
     }
 
     function townValidator(plate) {
-        plate = plate.toUpperCase();
+         plate = plate.toUpperCase();
 
         if (plate.startsWith('CA ')) {
             return true
@@ -61,7 +66,9 @@ function regNumber() {
         regCheck,
         registrationList,
         getReg,
-        clear, regexValidator, townValidator
+        clear, 
+        regexValidator, 
+        townValidator
 
 
     }

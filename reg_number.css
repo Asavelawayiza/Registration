@@ -69,15 +69,12 @@ h1{
   }
   
 
-.green {
+.true {
   color: green;
 
 }
 
-.red {
+.false {
   color: red;
 
-}
-.black{
-  color: black;
 }
