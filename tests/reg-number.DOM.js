@@ -31,7 +31,6 @@ addBtnElem.addEventListener("click", function () {
         errorMessage.classList.remove("green")
         errorMessage.classList.add("red")
 
-        // return;
     }
 
     const plate = inputReg.value.toUpperCase()
@@ -60,47 +59,14 @@ addBtnElem.addEventListener("click", function () {
 
     
     var result = instances.registrationList(inputReg.value);
-    console.log("result", result)
     var regNumbers = instances.getReg();
 
     var newReg = document.createElement("li");
     newReg.textContent = inputReg.value.toUpperCase();
-    // newReg.classList.add("registrations");
     registrations.appendChild(newReg);
 
     localStorage['reg'] = JSON.stringify(instances.getReg())
-    console.log(result);
-
-
-    // console.log("regNumbers", regNumbers)
-    //   instances.regCheck(regNumbers);
-
-
-    // for (var i = 0; i < regNumbers.length; i++) {
-    //     var selectedReg = regNumbers[i];
-    // console.log('selected reg',i);
-
-    // if (!result) {
-    //     var newReg = document.createElement("li");
-    //     newReg.textContent = inputReg.value.toUpperCase();
-    //     // newReg.classList.add("registrations");
-    //     registrations.appendChild(newReg);
-
-    //     localStorage['reg'] = JSON.stringify(instances.getReg())
-    //     console.log(result);
-    // } else {
-    //     clearError();
-    //     errorMessage.innerHTML = "The registration  already added"
-    //     errorMessage.classList.remove("green")
-    //     errorMessage.classList.add("red")
-
-    //     // return;
-
-    // }
-    // }
-
-
-
+   
 });
 
 
@@ -131,8 +97,7 @@ clearBtn.addEventListener("click", function () {
     instances.clear();
     localStorage.clear();
     registrations.innerHTML = ""
-    // loc.reload();
-
+   
 
 })
 
