@@ -37,6 +37,9 @@ h1{
       margin-right: 1em;
   }
   
+  .col-6{
+    float: left;
+  }
   .col-12{
     justify-content: center;
     display: flex;
@@ -56,13 +59,27 @@ h1{
     display: flex;
     font: 20px arial, sans-serif;
       font-weight: bold;  
+  } 
+  
+  .tempCities{
+    justify-content: center;
+    display: flex;
+    font: 20px arial, sans-serif;
+      font-weight: bold;  
   }
+
+
 
   .hidden{
     display: none;
   }
 
   .error {
+    justify-content: center;
+    display: flex;
+    font-size: 25px;
+  }
+  .tempError {
     justify-content: center;
     display: flex;
     font-size: 25px;

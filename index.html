@@ -6,8 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="reg_number.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="tests/reg_number.js" charset="utf-8"></script>
-    <title>Registration number</title>
+    <script type="text/x-template" class="template">
+        {{#each getTemplate}}
+        <div class="plates">{{this}}</div>
+      {{/each}}
+    
+    </script>
+   
 </head>
 
 <body >
@@ -38,17 +45,17 @@
 
                            
                             <span>
-                                <input type="radio" class="radio-inline" name="myCity" value="CA"> Cape Town
+                                <input type="radio" class="myCity" name="myCity" value="CA"> Cape Town
                             </span>
 
                             <span>
-                                <input type="radio" class="radio-inline" name="myCity" value="CY"> Bellvile
+                                <input type="radio" class="myCity" name="myCity" value="CY"> Bellvile
                             </span>
 
                             <span>
-                                <input type="radio" class="radio-inline" name="myCity" value="CK"> Malmesbury
+                                <input type="radio" class="myCity" name="myCity" value="CK"> Malmesbury
                             </span>
-                            <input type="radio" class="radio-inline" name="myCity" value=""> show all
+                            <input type="radio" class="myCity" name="myCity" value=""> show all
                         </span>
 
                         </label>
@@ -76,8 +83,83 @@
             <div class="registrations">
         </div>
 
+
+
+
+
+
+
+<div class="col-6">
+
+        <div class="container">
+            <h1>Registration Number</h1>
+            <div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="Reg-number">
+                            Registration Number:
+                            <input type="text" class="tempInputReg" name="Reg-num" placeholder="eg. CA 123-321" value="" maxlength="10">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-12">
+                        <div class="Btns">
+                            <button type=button class="tempAddButton" value="Add">Add</button>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-12">
+                        <div class="tempCities">
+                            <label>
+    
+                               
+                                <span>
+                                    <input type="radio" class="myCity" name="radio-inline" value="CA"> Cape Town
+                                </span>
+    
+                                <span>
+                                    <input type="radio" class="myCity" name="radio-inline" value="CY"> Bellvile
+                                </span>
+    
+                                <span>
+                                    <input type="radio" class="myCity" name="radio-inline" value="CK"> Malmesbury
+                                </span>
+                                <input type="radio" class="myCity" name="radio-inline" value=""> show all
+                            </span>
+    
+                            </label>
+                        </div>
+                    </div>
+                </div>
+    
+    
+    
+                <div class="row">
+                    <div class="col-12">
+                        <div class="Btns">
+                            <button type=button class="tempShowButton" value="Show">Show</button>
+    
+                            <button type=button class="tempClearButton" value="Clear">Clear</button>
+    
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="tempError">
+                
+                </div>
+    
+                <div class="tempRegistrations">
+            </div>
+        </div>
+  
                 <script src="tests/reg_number.js"></script>
                 <script src="tests/reg-number.DOM.js"></script>
+                <script src="reg-numberTemp.DOM.js"></script>
 </body>
 
 </html>
